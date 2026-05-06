@@ -1,5 +1,6 @@
 import React from 'react';
 import DashboardImage from '../../assets/Dashboard.jpg';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -19,12 +20,12 @@ const Hero = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
-          <button className="w-full sm:w-auto px-8 py-4 bg-[#4338ca] text-white rounded-xl font-bold text-lg shadow-lg">
+          <Link to="/free-trial" className="w-full sm:w-auto px-8 py-4 bg-[#4338ca] text-white rounded-xl font-bold text-lg shadow-lg text-center">
             Start Free Trial
-          </button>
-          <button className="w-full sm:w-auto px-8 py-4 bg-white text-[#111827] border border-gray-200 rounded-xl font-bold text-lg shadow-sm">
+          </Link>
+          <Link to="/book-demo" className="w-full sm:w-auto px-8 py-4 bg-white text-[#111827] border border-gray-200 rounded-xl font-bold text-lg shadow-sm text-center">
             Book a Demo
-          </button>
+          </Link>
         </div>
       </div>
 

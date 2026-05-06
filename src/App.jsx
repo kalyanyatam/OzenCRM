@@ -3,15 +3,21 @@ import { Routes, Route } from 'react-router-dom'
 import Navbar from './Components/Navbar/Navbar'
 import Hero from './Components/Hero/Hero'
 import Features from './Components/Features/Features'
-import APISection from './Components/APISection/APISection'
 import CTA from './Components/CTA/CTA'
 import Intelligence from './Components/Intelligence/Intelligence'
 import Productsection from './Components/Productsection/Productsection'
+import APISection from './Components/APISection/APISection'
+import APIPage from './Components/APIPage/APIPage'
+import PricingPage from './Components/PricingPage/PricingPage'
+import FreeTrial from './Components/FreeTrial/FreeTrial'
+import BookDemo from './Components/BookDemo/BookDemo'
+import Footer from './Components/Footer/Footer'
+import SubNav from './Components/Navbar/SubNav'
 
 const LandingPage = () => (
   <main>
     <Hero />
-    <Features />
+    <SubNav />
     <Intelligence />
     <APISection />
     <CTA />
@@ -26,11 +32,13 @@ const App = () => {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/product" element={<Productsection />} />
+        <Route path="/api" element={<APIPage />} />
+        <Route path="/pricing" element={<PricingPage />} />
+        <Route path="/free-trial" element={<FreeTrial />} />
+        <Route path="/book-demo" element={<BookDemo />} />
       </Routes>
 
-      <footer className="w-full py-8 bg-slate-900 border-t border-slate-800 text-center text-slate-500 text-sm">
-        <p>© 2026 OzenCRM. All rights reserved.</p>
-      </footer>
+      <Footer />
     </div>
   )
 }

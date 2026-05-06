@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function CTA() {
   return (
@@ -21,12 +22,12 @@ export default function CTA() {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-            <button className="w-full sm:w-auto px-8 py-4 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 hover:scale-105 hover:shadow-lg hover:shadow-indigo-600/20 transition-all duration-300 text-base">
+            <Link to="/free-trial" className="w-full sm:w-auto px-8 py-4 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 hover:scale-105 hover:shadow-lg hover:shadow-indigo-600/20 transition-all duration-300 text-base text-center">
               Start Free Trial
-            </button>
-            <button className="w-full sm:w-auto px-8 py-4 bg-white text-slate-900 font-bold rounded-xl hover:bg-slate-50 transition-all duration-300 text-base border border-transparent">
+            </Link>
+            <Link to="/book-demo" className="w-full sm:w-auto px-8 py-4 bg-white text-slate-900 font-bold rounded-xl hover:bg-slate-50 transition-all duration-300 text-base border border-transparent text-center">
               Book a Demo
-            </button>
+            </Link>
           </div>
 
         </div>

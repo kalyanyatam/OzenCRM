@@ -1,5 +1,6 @@
 import React from 'react';
 import { AlignLeft, Scissors, Activity, Share2, Component } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import hrdash from '../../assets/hr.png';
 import hrfloat from '../../assets/hr float.png';
 import teamManagementImg from '../../assets/teamManagement.png'
@@ -28,12 +29,12 @@ const HRSection = () => {
                             </p>
 
                             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-                                <button className="w-full sm:w-auto px-8 py-3.5 bg-indigo-600 text-white font-medium rounded-xl hover:bg-indigo-700 hover:shadow-lg hover:scale-105 transition-all duration-300 text-base">
+                                <Link to="/book-demo" className="w-full sm:w-auto px-8 py-3.5 bg-indigo-600 text-white font-medium rounded-xl hover:bg-indigo-700 hover:shadow-lg hover:scale-105 transition-all duration-300 text-base text-center">
                                     Book a Demo
-                                </button>
-                                <button className="w-full sm:w-auto px-8 py-3.5 bg-white text-slate-700 font-medium rounded-xl hover:bg-slate-50 hover:shadow-md transition-all duration-300 text-base border border-slate-200">
+                                </Link>
+                                <Link to="/free-trial" className="w-full sm:w-auto px-8 py-3.5 bg-white text-slate-700 font-medium rounded-xl hover:bg-slate-50 hover:shadow-md transition-all duration-300 text-base border border-slate-200 text-center">
                                     Start Free Trial
-                                </button>
+                                </Link>
                             </div>
                         </div>
 
@@ -261,12 +262,12 @@ const HRSection = () => {
                         Start optimizing your workforce intelligence today. No hidden setup fees, no complex integrations.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <button className="w-full sm:w-auto px-8 py-4 bg-white text-indigo-900 font-bold rounded-xl hover:bg-slate-50 hover:shadow-lg transition-all duration-300 text-base">
+                        <Link to="/free-trial" className="w-full sm:w-auto px-8 py-4 bg-white text-indigo-900 font-bold rounded-xl hover:bg-slate-50 hover:shadow-lg transition-all duration-300 text-base text-center">
                             Start Free Trial
-                        </button>
-                        <button className="w-full sm:w-auto px-8 py-4 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 transition-all duration-300 text-base">
+                        </Link>
+                        <Link to="/book-demo" className="w-full sm:w-auto px-8 py-4 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 transition-all duration-300 text-base text-center">
                             Book a Demo
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </section>

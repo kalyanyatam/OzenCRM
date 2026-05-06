@@ -1,6 +1,7 @@
 import React from 'react';
 import { Target, BarChart3, MapPin, Activity, CheckCircle2, Users, Calendar, Zap, PieChart, TrendingUp, Presentation, Lightbulb } from 'lucide-react';
-import dashboardImg from '../../../../.gemini/antigravity/brain/d8fab999-5025-4f7d-b1d5-44cddbbbdf59/ozencrm_dashboard_1777876549531.png';
+import { Link } from 'react-router-dom';
+import dashboardImg from '../../assets/ozencrm_dashboard.png';
 
 const CRMSection = () => {
     return (
@@ -25,12 +26,12 @@ const CRMSection = () => {
                             </p>
 
                             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-                                <button className="w-full sm:w-auto px-8 py-4 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-700 transition-all duration-300 text-base shadow-lg shadow-indigo-600/20">
+                                <Link to="/free-trial" className="w-full sm:w-auto px-8 py-4 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-700 transition-all duration-300 text-base shadow-lg shadow-indigo-600/20 text-center">
                                     Start Free Trial
-                                </button>
-                                <button className="w-full sm:w-auto px-8 py-4 bg-slate-100 text-slate-700 font-semibold rounded-xl hover:bg-slate-200 transition-all duration-300 text-base">
+                                </Link>
+                                <Link to="/book-demo" className="w-full sm:w-auto px-8 py-4 bg-slate-100 text-slate-700 font-semibold rounded-xl hover:bg-slate-200 transition-all duration-300 text-base text-center">
                                     Book a Demo
-                                </button>
+                                </Link>
                             </div>
                         </div>
 
@@ -210,12 +211,12 @@ const CRMSection = () => {
                         Join 50,000+ high-growth companies that use OzenCRM to scale their revenue operations.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <button className="w-full sm:w-auto px-8 py-4 bg-indigo-700 text-white font-bold rounded-xl hover:bg-indigo-800 transition-all duration-300 text-base shadow-lg shadow-indigo-700/20">
+                        <Link to="/free-trial" className="w-full sm:w-auto px-8 py-4 bg-indigo-700 text-white font-bold rounded-xl hover:bg-indigo-800 transition-all duration-300 text-base shadow-lg shadow-indigo-700/20 text-center">
                             Start Free Trial
-                        </button>
-                        <button className="w-full sm:w-auto px-8 py-4 bg-white text-slate-700 font-bold rounded-xl hover:bg-slate-50 border border-slate-200 transition-all duration-300 text-base">
+                        </Link>
+                        <Link to="/book-demo" className="w-full sm:w-auto px-8 py-4 bg-white text-slate-700 font-bold rounded-xl hover:bg-slate-50 border border-slate-200 transition-all duration-300 text-base text-center">
                             Book a Demo
-                        </button>
+                        </Link>
                     </div>
                     <p className="mt-6 text-xs text-slate-400 font-medium">No credit card required. 14-day free trial. Cancel anytime.</p>
                 </div>

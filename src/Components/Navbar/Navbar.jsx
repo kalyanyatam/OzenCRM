@@ -15,18 +15,18 @@ const Navbar = () => {
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-10">
           <Link to="/product" className="text-[#64748b] hover:text-[#111827] text-[15px] font-medium transition-colors">Product</Link>
-          <Link to="/" className="text-[#64748b] hover:text-[#111827] text-[15px] font-medium transition-colors">API</Link>
-          <Link to="/" className="text-[#64748b] hover:text-[#111827] text-[15px] font-medium transition-colors">Pricing</Link>
+          <Link to="/api" className="text-[#64748b] hover:text-[#111827] text-[15px] font-medium transition-colors">API</Link>
+          <Link to="/pricing" className="text-[#64748b] hover:text-[#111827] text-[15px] font-medium transition-colors">Pricing</Link>
         </div>
 
         {/* Buttons - Hidden on very small screens to save space */}
         <div className="flex items-center gap-3">
-          <button className="hidden sm:block px-5 py-2 bg-[#f1f5f9] text-[#111827] rounded-lg text-sm font-semibold hover:bg-gray-200">
+          <Link to="/free-trial" className="hidden sm:block px-5 py-2 bg-[#f1f5f9] text-[#111827] rounded-lg text-sm font-semibold hover:bg-gray-200">
             Free Trial
-          </button>
-          <button className="px-5 py-2 bg-[#4338ca] text-white rounded-lg text-sm font-semibold shadow-md">
+          </Link>
+          <Link to="/book-demo" className="px-5 py-2 bg-[#4338ca] text-white rounded-lg text-sm font-semibold shadow-md inline-block">
             Book a Demo
-          </button>
+          </Link>
 
           {/* Mobile Menu Toggle */}
           <button className="md:hidden p-2" onClick={() => setIsOpen(!isOpen)}>
@@ -40,10 +40,10 @@ const Navbar = () => {
       {/* Mobile Dropdown */}
       {isOpen && (
         <div className="md:hidden bg-white px-6 pb-6 flex flex-col gap-4 border-b">
-          <a href="#" className="text-[#64748b] font-medium">Product</a>
-          <a href="#" className="text-[#64748b] font-medium">API</a>
-          <a href="#" className="text-[#64748b] font-medium">Pricing</a>
-          <button className="w-full py-3 bg-[#f1f5f9] rounded-lg font-semibold text-center">Free Trial</button>
+          <Link to="/product" className="text-[#64748b] font-medium" onClick={() => setIsOpen(false)}>Product</Link>
+          <Link to="/api" className="text-[#64748b] font-medium" onClick={() => setIsOpen(false)}>API</Link>
+          <Link to="/pricing" className="text-[#64748b] font-medium" onClick={() => setIsOpen(false)}>Pricing</Link>
+          <Link to="/free-trial" className="w-full py-3 bg-[#f1f5f9] text-[#111827] rounded-lg font-semibold text-center block" onClick={() => setIsOpen(false)}>Free Trial</Link>
         </div>
       )}
     </nav>

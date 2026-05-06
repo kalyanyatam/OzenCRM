@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import { useSearchParams } from "react-router-dom";
 import {
     Users,
     Briefcase,
@@ -12,7 +13,10 @@ import MarketingSection from "./MarketingSection";
 import CampaignsSection from "./CampaignsSection";
 
 const Productsection = () => {
-    const [activeTab, setActiveTab] = useState("hr");
+    const [searchParams, setSearchParams] = useSearchParams();
+    const urlTab = searchParams.get("tab");
+    const activeTab = ["hr", "crm", "marketing", "campaigns"].includes(urlTab) ? urlTab : "hr";
+    const setActiveTab = (tab) => setSearchParams({ tab });
 
     const tabs = [
         { id: "hr", label: "HR", icon: Users },

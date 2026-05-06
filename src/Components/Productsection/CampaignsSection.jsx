@@ -1,6 +1,7 @@
 import React from 'react';
 import { Share2, Target, CreditCard, Sliders, BarChart2, PieChart, Activity, MapPin, ChevronRight } from 'lucide-react';
-import dashboardImg from '../../../../.gemini/antigravity/brain/d8fab999-5025-4f7d-b1d5-44cddbbbdf59/ozencrm_dark_ui_1777876565924.png';
+import { Link } from 'react-router-dom';
+import dashboardImg from '../../assets/ozencrm_dark_ui.png';
 
 const CampaignsSection = () => {
     return (
@@ -25,12 +26,12 @@ const CampaignsSection = () => {
                             </p>
                             
                             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-                                <button className="w-full sm:w-auto px-8 py-4 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-700 transition-all duration-300 text-base shadow-lg shadow-indigo-600/20">
+                                <Link to="/book-demo" className="w-full sm:w-auto px-8 py-4 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-700 transition-all duration-300 text-base shadow-lg shadow-indigo-600/20 text-center">
                                     Book a Demo
-                                </button>
-                                <button className="w-full sm:w-auto px-8 py-4 bg-white text-slate-700 font-semibold rounded-xl hover:bg-slate-50 border border-slate-200 transition-all duration-300 text-base">
+                                </Link>
+                                <Link to="/free-trial" className="w-full sm:w-auto px-8 py-4 bg-white text-slate-700 font-semibold rounded-xl hover:bg-slate-50 border border-slate-200 transition-all duration-300 text-base text-center">
                                     Start Free Trial
-                                </button>
+                                </Link>
                             </div>
                         </div>
                         

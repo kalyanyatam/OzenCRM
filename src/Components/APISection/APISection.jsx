@@ -1,74 +1,100 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Copy, Check } from 'lucide-react';
+
+const API_KEY = import.meta.env.VITE_OZENCRM_API_KEY ?? 'sk_test_••••••••••••••••';
 
 const codeSnippets = {
   javascript: [
-    { type: 'keyword',  text: 'const ' },
-    { type: 'plain',    text: 'client = ' },
-    { type: 'fn',       text: 'require' },
-    { type: 'plain',    text: '(' },
-    { type: 'string',   text: "'ozencrm-sdk'" },
-    { type: 'plain',    text: ');\n\n' },
-    { type: 'comment',  text: '// Initialize with your secret key\n' },
-    { type: 'keyword',  text: 'const ' },
-    { type: 'plain',    text: 'api = ' },
-    { type: 'keyword',  text: 'new ' },
-    { type: 'plain',    text: 'client.' },
-    { type: 'fn',       text: 'v2' },
-    { type: 'plain',    text: '(' },
-    { type: 'string',   text: "'sk_test_4eC39HqLyjWDarjtT1zdp7dc'" },
-    { type: 'plain',    text: ');\n\n' },
-    { type: 'comment',  text: '// Fetch customer pipeline data\n' },
-    { type: 'keyword',  text: 'await ' },
-    { type: 'plain',    text: 'api.customers.' },
-    { type: 'fn',       text: 'retrieve' },
-    { type: 'plain',    text: '(' },
-    { type: 'string',   text: "'cust_01928'" },
-    { type: 'plain',    text: ', {\n    expand: [' },
-    { type: 'string',   text: "'deals'" },
-    { type: 'plain',    text: ', ' },
-    { type: 'string',   text: "'interactions'" },
-    { type: 'plain',    text: ']\n});' },
+    { type: 'keyword', text: 'const '          },
+    { type: 'plain',   text: 'client = '       },
+    { type: 'fn',      text: 'require'         },
+    { type: 'plain',   text: '('               },
+    { type: 'string',  text: "'ozencrm-sdk'"   },
+    { type: 'plain',   text: ');\n\n'          },
+    { type: 'comment', text: '// Initialize with your secret key\n' },
+    { type: 'keyword', text: 'const '          },
+    { type: 'plain',   text: 'api = '          },
+    { type: 'keyword', text: 'new '            },
+    { type: 'plain',   text: 'client.'         },
+    { type: 'fn',      text: 'v2'              },
+    { type: 'plain',   text: '('               },
+    { type: 'string',  text: `'${API_KEY}'`    },
+    { type: 'plain',   text: ');\n\n'          },
+    { type: 'comment', text: '// Fetch customer pipeline data\n' },
+    { type: 'keyword', text: 'await '          },
+    { type: 'plain',   text: 'api.customers.'  },
+    { type: 'fn',      text: 'retrieve'        },
+    { type: 'plain',   text: '('               },
+    { type: 'string',  text: "'cust_01928'"    },
+    { type: 'plain',   text: ', {\n    expand: [' },
+    { type: 'string',  text: "'deals'"         },
+    { type: 'plain',   text: ', '              },
+    { type: 'string',  text: "'interactions'"  },
+    { type: 'plain',   text: ']\n});'          },
   ],
   python: [
-    { type: 'keyword',  text: 'from ' },
-    { type: 'plain',    text: 'ozencrm ' },
-    { type: 'keyword',  text: 'import ' },
-    { type: 'plain',    text: 'Client\n\n' },
-    { type: 'comment',  text: '# Initialize with your secret key\n' },
-    { type: 'plain',    text: 'client = ' },
-    { type: 'fn',       text: 'Client' },
-    { type: 'plain',    text: '(api_key=' },
-    { type: 'string',   text: "'sk_test_4eC39HqLyjWDarjtT1zdp7dc'" },
-    { type: 'plain',    text: ')\n\n' },
-    { type: 'comment',  text: '# Fetch customer pipeline data\n' },
-    { type: 'plain',    text: 'customer = client.customers.' },
-    { type: 'fn',       text: 'retrieve' },
-    { type: 'plain',    text: '(\n    ' },
-    { type: 'string',   text: "'cust_01928'" },
-    { type: 'plain',    text: ',\n    expand=[' },
-    { type: 'string',   text: "'deals'" },
-    { type: 'plain',    text: ', ' },
-    { type: 'string',   text: "'interactions'" },
-    { type: 'plain',    text: ']\n)' },
+    { type: 'keyword', text: 'from '           },
+    { type: 'plain',   text: 'ozencrm '        },
+    { type: 'keyword', text: 'import '         },
+    { type: 'plain',   text: 'Client\n\n'      },
+    { type: 'comment', text: '# Initialize with your secret key\n' },
+    { type: 'plain',   text: 'client = '       },
+    { type: 'fn',      text: 'Client'          },
+    { type: 'plain',   text: '(api_key='       },
+    { type: 'string',  text: `'${API_KEY}'`    },
+    { type: 'plain',   text: ')\n\n'           },
+    { type: 'comment', text: '# Fetch customer pipeline data\n' },
+    { type: 'plain',   text: 'customer = client.customers.' },
+    { type: 'fn',      text: 'retrieve'        },
+    { type: 'plain',   text: '(\n    '         },
+    { type: 'string',  text: "'cust_01928'"    },
+    { type: 'plain',   text: ',\n    expand=[' },
+    { type: 'string',  text: "'deals'"         },
+    { type: 'plain',   text: ', '              },
+    { type: 'string',  text: "'interactions'"  },
+    { type: 'plain',   text: ']\n)'            },
   ],
   curl: [
-    { type: 'fn',       text: 'curl' },
-    { type: 'plain',    text: ' -X GET \\\n  ' },
-    { type: 'string',   text: 'https://api.ozencrm.com/v2/customers/cust_01928' },
-    { type: 'plain',    text: ' \\\n  -H ' },
-    { type: 'string',   text: '"Authorization: Bearer sk_test_4eC39..."' },
-    { type: 'plain',    text: ' \\\n  -H ' },
-    { type: 'string',   text: '"Content-Type: application/json"' },
-    { type: 'plain',    text: ' \\\n  -d ' },
-    { type: 'string',   text: `'{"expand": ["deals", "interactions"]}'` },
+    { type: 'fn',     text: 'curl'             },
+    { type: 'plain',  text: ' -X GET \\\n  '   },
+    { type: 'string', text: 'https://api.ozencrm.com/v2/customers/cust_01928' },
+    { type: 'plain',  text: ' \\\n  -H '       },
+    { type: 'string', text: `"Authorization: Bearer ${API_KEY}"` },
+    { type: 'plain',  text: ' \\\n  -H '       },
+    { type: 'string', text: '"Content-Type: application/json"' },
+    { type: 'plain',  text: ' \\\n  -d '       },
+    { type: 'string', text: `'{"expand": ["deals", "interactions"]}'` },
   ],
 };
 
 const rawSnippets = {
-  javascript: `const client = require('ozencrm-sdk');\n\n// Initialize with your secret key\nconst api = new client.v2('sk_test_4eC39HqLyjWDarjtT1zdp7dc');\n\n// Fetch customer pipeline data\nawait api.customers.retrieve('cust_01928', {\n    expand: ['deals', 'interactions']\n});`,
-  python: `from ozencrm import Client\n\n# Initialize with your secret key\nclient = Client(api_key='sk_test_4eC39HqLyjWDarjtT1zdp7dc')\n\n# Fetch customer pipeline data\ncustomer = client.customers.retrieve(\n    'cust_01928',\n    expand=['deals', 'interactions']\n)`,
-  curl: `curl -X GET \\\n  https://api.ozencrm.com/v2/customers/cust_01928 \\\n  -H "Authorization: Bearer sk_test_4eC39..." \\\n  -H "Content-Type: application/json" \\\n  -d '{"expand": ["deals", "interactions"]}'`,
+  javascript:
+`const client = require('ozencrm-sdk');
+
+// Initialize with your secret key
+const api = new client.v2('${API_KEY}');
+
+// Fetch customer pipeline data
+await api.customers.retrieve('cust_01928', {
+    expand: ['deals', 'interactions']
+});`,
+  python:
+`from ozencrm import Client
+
+# Initialize with your secret key
+client = Client(api_key='${API_KEY}')
+
+# Fetch customer pipeline data
+customer = client.customers.retrieve(
+    'cust_01928',
+    expand=['deals', 'interactions']
+)`,
+  curl:
+`curl -X GET \\
+  https://api.ozencrm.com/v2/customers/cust_01928 \\
+  -H "Authorization: Bearer ${API_KEY}" \\
+  -H "Content-Type: application/json" \\
+  -d '{"expand": ["deals", "interactions"]}'`,
 };
 
 const colorMap = {
@@ -95,7 +121,7 @@ const APISection = () => {
     <section className="w-full py-24 bg-[#f8fafc]">
       <div className="max-w-[1440px] mx-auto px-6 md:px-12">
 
-        {/* ── Header ── */}
+        {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-14">
           <span className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest text-indigo-600 bg-indigo-50 px-3 py-1.5 rounded-full mb-5">
             Developer First
@@ -108,7 +134,7 @@ const APISection = () => {
           </p>
         </div>
 
-        {/* ── Code card — centered ── */}
+        {/* Code card — centered */}
         <div className="flex justify-center">
           <div className="w-full max-w-2xl bg-white rounded-2xl border border-slate-100 shadow-[0_4px_24px_rgba(0,0,0,0.06)] overflow-hidden">
 
@@ -134,7 +160,7 @@ const APISection = () => {
             </div>
 
             {/* Language tabs */}
-            <div className="flex items-center gap-0 border-b border-slate-100 bg-slate-50 px-5">
+            <div className="flex items-center border-b border-slate-100 bg-slate-50 px-5">
               {LANGS.map((lang) => (
                 <button
                   key={lang}

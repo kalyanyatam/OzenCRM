@@ -29,9 +29,9 @@ const CampaignsSection = () => {
                                 <Link to="/book-demo" className="w-full sm:w-auto px-8 py-4 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-700 transition-all duration-300 text-base shadow-lg shadow-indigo-600/20 text-center">
                                     Book a Demo
                                 </Link>
-                                <Link to="/free-trial" className="w-full sm:w-auto px-8 py-4 bg-white text-slate-700 font-semibold rounded-xl hover:bg-slate-50 border border-slate-200 transition-all duration-300 text-base text-center">
+                                <a href="https://ipixelzen.com/register" className="w-full sm:w-auto px-8 py-4 bg-white text-slate-700 font-semibold rounded-xl hover:bg-slate-50 border border-slate-200 transition-all duration-300 text-base text-center">
                                     Start Free Trial
-                                </Link>
+                                </a>
                             </div>
                         </div>
                         

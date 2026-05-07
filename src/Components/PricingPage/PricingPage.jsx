@@ -242,9 +242,9 @@ const PricingPage = () => {
                 Join 500+ enterprises that trust NotaryFlow for their daily documentation needs.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link to="/free-trial" className="bg-white text-indigo-900 hover:bg-indigo-50 px-6 py-3.5 rounded-xl font-bold transition-colors text-center inline-block">
+                <a href="https://ipixelzen.com/register" className="bg-white text-indigo-900 hover:bg-indigo-50 px-6 py-3.5 rounded-xl font-bold transition-colors text-center inline-block">
                   Get started Today
-                </Link>
+                </a>
                 <Link to="/book-demo" className="bg-indigo-800 hover:bg-indigo-700 text-white border border-indigo-700 px-6 py-3.5 rounded-xl font-bold transition-colors text-center inline-block">
                   Schedule Demo
                 </Link>

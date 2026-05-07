@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+
+  const isActive = (path) => location.pathname === path;
 
   return (
     <nav className="bg-white border-b border-gray-50 sticky top-0 z-50">
@@ -14,16 +17,24 @@ const Navbar = () => {
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-10">
-          <Link to="/product" className="text-[#64748b] hover:text-[#111827] text-[15px] font-medium transition-colors">Product</Link>
-          <Link to="/api" className="text-[#64748b] hover:text-[#111827] text-[15px] font-medium transition-colors">API</Link>
-          <Link to="/pricing" className="text-[#64748b] hover:text-[#111827] text-[15px] font-medium transition-colors">Pricing</Link>
+          <Link to="/product" className={`relative text-[15px] font-medium transition-colors group ${isActive('/product') ? 'text-[#111827]' : 'text-[#64748b] hover:text-[#111827]'}`}>
+            Product
+            <span className={`absolute left-0 -bottom-1 h-[2px] bg-[#111827] transition-all duration-300 ${isActive('/product') ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+          </Link>
+          <Link to="/api" className={`relative text-[15px] font-medium transition-colors group ${isActive('/api') ? 'text-[#111827]' : 'text-[#64748b] hover:text-[#111827]'}`}>
+            API
+            <span className={`absolute left-0 -bottom-1 h-[2px] bg-[#111827] transition-all duration-300 ${isActive('/api') ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+          </Link>
+          <Link to="/pricing" className={`relative text-[15px] font-medium transition-colors group ${isActive('/pricing') ? 'text-[#111827]' : 'text-[#64748b] hover:text-[#111827]'}`}>
+            Pricing
+            <span className={`absolute left-0 -bottom-1 h-[2px] bg-[#111827] transition-all duration-300 ${isActive('/pricing') ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+          </Link>
         </div>
 
-        {/* Buttons - Hidden on very small screens to save space */}
         <div className="flex items-center gap-3">
-          <Link to="/free-trial" className="hidden sm:block px-5 py-2 bg-[#f1f5f9] text-[#111827] rounded-lg text-sm font-semibold hover:bg-gray-200">
+          <a href="https://ipixelzen.com/register" className="hidden sm:block px-5 py-2 bg-[#f1f5f9] text-[#111827] rounded-lg text-sm font-semibold hover:bg-gray-200">
             Free Trial
-          </Link>
+          </a>
           <Link to="/book-demo" className="px-5 py-2 bg-[#4338ca] text-white rounded-lg text-sm font-semibold shadow-md inline-block">
             Book a Demo
           </Link>
@@ -40,10 +51,10 @@ const Navbar = () => {
       {/* Mobile Dropdown */}
       {isOpen && (
         <div className="md:hidden bg-white px-6 pb-6 flex flex-col gap-4 border-b">
-          <Link to="/product" className="text-[#64748b] font-medium" onClick={() => setIsOpen(false)}>Product</Link>
-          <Link to="/api" className="text-[#64748b] font-medium" onClick={() => setIsOpen(false)}>API</Link>
-          <Link to="/pricing" className="text-[#64748b] font-medium" onClick={() => setIsOpen(false)}>Pricing</Link>
-          <Link to="/free-trial" className="w-full py-3 bg-[#f1f5f9] text-[#111827] rounded-lg font-semibold text-center block" onClick={() => setIsOpen(false)}>Free Trial</Link>
+          <Link to="/product" onClick={() => setIsOpen(false)} className={`font-medium transition-colors hover:underline underline-offset-4 ${isActive('/product') ? 'text-[#111827] underline' : 'text-[#64748b] hover:text-[#111827]'}`}>Product</Link>
+          <Link to="/api" onClick={() => setIsOpen(false)} className={`font-medium transition-colors hover:underline underline-offset-4 ${isActive('/api') ? 'text-[#111827] underline' : 'text-[#64748b] hover:text-[#111827]'}`}>API</Link>
+          <Link to="/pricing" onClick={() => setIsOpen(false)} className={`font-medium transition-colors hover:underline underline-offset-4 ${isActive('/pricing') ? 'text-[#111827] underline' : 'text-[#64748b] hover:text-[#111827]'}`}>Pricing</Link>
+          <a href="https://ipixelzen.com/register" className="w-full py-3 bg-[#f1f5f9] hover:bg-gray-200 transition-colors rounded-lg font-semibold text-center block">Free Trial</a>
         </div>
       )}
     </nav>

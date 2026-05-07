@@ -45,9 +45,9 @@ const MarketingSection = () => {
                             </p>
 
                             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-                                <Link to="/free-trial" className="w-full sm:w-auto px-8 py-4 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-700 transition-all duration-300 text-base shadow-lg shadow-indigo-600/20 text-center">
+                                <a href="https://ipixelzen.com/register" className="w-full sm:w-auto px-8 py-4 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-700 transition-all duration-300 text-base shadow-lg shadow-indigo-600/20 text-center">
                                     Start Free Trial
-                                </Link>
+                                </a>
                                 <Link to="/book-demo" className="w-full sm:w-auto px-8 py-4 bg-white text-slate-700 font-semibold rounded-xl hover:bg-slate-50 border border-slate-200 transition-all duration-300 text-base text-center">
                                     Book a Demo
                                 </Link>
@@ -225,9 +225,9 @@ const MarketingSection = () => {
                         Join thousands of revenue-driven marketing teams that use OzenCRM to scale their impact and drive consistent growth.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
-                        <Link to="/free-trial" className="w-full sm:w-auto px-10 py-4 bg-white text-indigo-900 font-bold rounded-xl hover:bg-slate-50 transition-all duration-300 text-base shadow-lg hover:-translate-y-1 text-center">
+                        <a href="https://ipixelzen.com/register" className="w-full sm:w-auto px-10 py-4 bg-white text-indigo-900 font-bold rounded-xl hover:bg-slate-50 transition-all duration-300 text-base shadow-lg hover:-translate-y-1 text-center">
                             Start Free Trial
-                        </Link>
+                        </a>
                         <Link to="/book-demo" className="w-full sm:w-auto px-10 py-4 bg-indigo-800 text-white font-bold rounded-xl border border-indigo-500 hover:bg-indigo-900 transition-all duration-300 text-base text-center">
                             Book a Demo
                         </Link>

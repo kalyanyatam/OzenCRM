@@ -26,9 +26,9 @@ const CRMSection = () => {
                             </p>
 
                             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-                                <Link to="/free-trial" className="w-full sm:w-auto px-8 py-4 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-700 transition-all duration-300 text-base shadow-lg shadow-indigo-600/20 text-center">
+                                <a href="https://ipixelzen.com/register" className="w-full sm:w-auto px-8 py-4 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-700 transition-all duration-300 text-base shadow-lg shadow-indigo-600/20 text-center">
                                     Start Free Trial
-                                </Link>
+                                </a>
                                 <Link to="/book-demo" className="w-full sm:w-auto px-8 py-4 bg-slate-100 text-slate-700 font-semibold rounded-xl hover:bg-slate-200 transition-all duration-300 text-base text-center">
                                     Book a Demo
                                 </Link>
@@ -211,9 +211,9 @@ const CRMSection = () => {
                         Join 50,000+ high-growth companies that use OzenCRM to scale their revenue operations.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <Link to="/free-trial" className="w-full sm:w-auto px-8 py-4 bg-indigo-700 text-white font-bold rounded-xl hover:bg-indigo-800 transition-all duration-300 text-base shadow-lg shadow-indigo-700/20 text-center">
+                        <a href="https://ipixelzen.com/register" className="w-full sm:w-auto px-8 py-4 bg-indigo-700 text-white font-bold rounded-xl hover:bg-indigo-800 transition-all duration-300 text-base shadow-lg shadow-indigo-700/20 text-center">
                             Start Free Trial
-                        </Link>
+                        </a>
                         <Link to="/book-demo" className="w-full sm:w-auto px-8 py-4 bg-white text-slate-700 font-bold rounded-xl hover:bg-slate-50 border border-slate-200 transition-all duration-300 text-base text-center">
                             Book a Demo
                         </Link>

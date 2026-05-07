@@ -12,20 +12,6 @@ import {
 
 const tabs = [
     {
-        id: "hr",
-        label: "HR",
-        sublabel: "People & Workforce",
-        icon: Users,
-        tag: "Core",
-        description: "Streamline every stage of the employee lifecycle from hire to retire.",
-        features: [
-            { icon: UserCheck,     text: "Smart onboarding workflows" },
-            { icon: CalendarClock, text: "Leave & attendance tracking" },
-            { icon: BarChart2,     text: "Performance reviews & OKRs" },
-            { icon: CheckCircle2,  text: "Payroll & compliance automation" },
-        ],
-    },
-    {
         id: "crm",
         label: "CRM",
         sublabel: "Sales & Relationships",
@@ -37,6 +23,20 @@ const tabs = [
             { icon: Handshake,     text: "Contact & account management" },
             { icon: Bell,          text: "Follow-up reminders & alerts" },
             { icon: CheckCircle2,  text: "Revenue forecasting & reports" },
+        ],
+    },
+    {
+        id: "hr",
+        label: "HR",
+        sublabel: "People & Workforce",
+        icon: Users,
+        tag: "Core",
+        description: "Streamline every stage of the employee lifecycle from hire to retire.",
+        features: [
+            { icon: UserCheck,     text: "Smart onboarding workflows" },
+            { icon: CalendarClock, text: "Leave & attendance tracking" },
+            { icon: BarChart2,     text: "Performance reviews & OKRs" },
+            { icon: CheckCircle2,  text: "Payroll & compliance automation" },
         ],
     },
     {
